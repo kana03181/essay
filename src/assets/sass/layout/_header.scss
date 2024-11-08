@@ -1,0 +1,22 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../global" as *;
+
+/*
+  Header
+-----------------------------------------------------*/
+.l-header {
+  position: relative;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: clamp(24 / 16 * 1rem, 1.143rem + 1.79vw, 32 / 16 * 1rem) 0; //view:320-768px
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 5%;
+  }
+}

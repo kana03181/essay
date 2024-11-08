@@ -1,0 +1,40 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+.p-article {
+  border-bottom: 1px solid $primary-text-color;
+  width: 100%;
+  padding-block-end: pxToRem(64px);
+
+  &__wrapper {
+    margin-block: clamp(28 / 16 * 1rem, 1.583rem + 0.83vw, 36 / 16 * 1rem) clamp(24 / 16 * 1rem, 1.333rem + 0.83vw, 32 / 16 * 1rem); //320-1280
+  }
+
+  &__link {
+    width: fit-content;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: pxToRem(8px);
+    margin-block-start: clamp(24 / 16 * 1rem, 1.333rem + 0.83vw, 32 / 16 * 1rem);
+
+    & a {
+      font-size: pxToRem(16px);
+      display: block;
+      color: $primary-text-color;
+      text-decoration: none;
+      letter-spacing: 0.07em;
+      transition: letter-spacing 0.3s var(--ease5);
+
+      &:hover {
+        letter-spacing: 0.1em;
+        transition: letter-spacing 0.3s var(--ease5);
+      }
+    }
+  }
+}
+
+.p-article + .p-article {
+  margin-block-start: pxToRem(64px);
+}

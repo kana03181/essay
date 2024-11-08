@@ -1,0 +1,151 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+/*
+  Global Nav
+*/
+
+.p-global-nav {
+  visibility: hidden;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  padding: pxToRem(164px) 5% pxToRem(80px);
+  transition: var(--duration3) var(--ease1);
+  transition-property: opacity, visibility;
+  opacity: 0;
+  background-color: $base-color;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq(md) {
+    display: flex;
+    visibility: visible;
+    position: static;
+    align-items: center;
+    height: auto;
+    padding: 0;
+    column-gap: clamp(32 / 16 * 1rem, 0.5rem + 3.13vw, 48 / 16 * 1rem); //768-1280
+    transition: none;
+    opacity: 1;
+    background-color: transparent;
+    flex-direction: initial;
+  }
+}
+
+.is-resize .p-global-nav {
+  transition: none;
+}
+
+.is-active-drawer .p-global-nav {
+  visibility: visible;
+  transition: var(--duration2) var(--ease2);
+  transition-property: opacity, visibility;
+  opacity: 1;
+}
+
+.p-global-nav__sns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: pxToRem(52px);
+  order: 2;
+  gap: pxToRem(8px);
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-global-nav__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: pxToRem(8px);
+
+  @include mq(md) {
+    flex-direction: initial;
+    justify-content: space-between;
+    white-space: nowrap;
+    row-gap: 0;
+    column-gap: clamp(16 / 16 * 1rem, 0.25rem + 1.56vw, 24 / 16 * 1rem); //768-1280
+  }
+}
+
+.js-global-nav__list {
+  &.-menu {
+    overflow: hidden;
+
+    @include mq(md) {
+      overflow: initial;
+    }
+
+    & a.is-fadeIn {
+      animation: fadeIn var(--duration3) var(--ease3);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.p-global-nav a {
+  display: block;
+  padding-inline: pxToRem(8px);
+  padding-block: pxToRem(8px);
+  color: $primary-text-color;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: clamp(15 / 16 * 1rem, 0.917rem + 0.1vw, 16 / 16 * 1rem); //320-1280
+
+  & span {
+    position: relative;
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+      transform: scale(0, 1);
+      transform-origin: right top;
+      transition: transform var(--duration1) var(--ease5);
+    }
+  }
+
+  &:hover span::after {
+    transform: scale(1, 1);
+    transform-origin: left top;
+  }
+}
+
+.p-global-nav__list a.-sns {
+  padding-inline: pxToRem(8px);
+}
+
+.p-global-nav__list a .-Instagram {
+  width: pxToRem(28px);
+  height: auto;
+}
+
+.p-global-nav__list a .-x {
+  width: pxToRem(25px);
+  height: auto;
+}

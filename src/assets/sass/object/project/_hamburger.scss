@@ -1,0 +1,82 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+/*
+  Hamburger
+*/
+
+.p-hamburger {
+  --size: 40px;
+
+  $this: &;
+  position: fixed;
+
+  z-index: 4;
+  top: clamp(0.813rem, 0.455rem + 1.79vw, 1.313rem);
+  right: 2.5%;
+  width: var(--size);
+  height: var(--size);
+  margin: auto;
+  transition: var(--duration2) var(--ease3);
+  transition-property: transform;
+  border: 0;
+  text-align: center;
+  background-color: transparent;
+
+  @include mq(md) {
+    display: none;
+  }
+
+  &__line {
+    width: 100%;
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    transition: var(--duration2) $easing; //beforeとafterのtransitionをまとめて設定
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin: auto;
+      width: calc((24 / 40) * 100%); // calc((lineのwidth / ボタン本体のwidth) * 100%)
+      height: 2px;
+      background-color: $primary-text-color;
+      transition: inherit; //親要素ののtransitionを継承（メンテナンス性を配慮）
+      transition-property: top, transform;
+      transition-delay: var(--duration1), 0s; //transition-propertyで指定したプロパティが動くまでの時間を操作。top, transformの順で記述
+    }
+
+    &::before {
+      top: calc(50% - 5px);
+    }
+
+    &::after {
+      top: calc(50% + 5px);
+    }
+  }
+}
+
+.is-active-drawer .p-hamburger__line {
+  &::before,
+  &::after {
+    top: 50%;
+    transition: var(--duration2) $easing;
+    transition-property: top, transform;
+    transition-delay: 0s, var(--duration1); //transition-propertyで指定したプロパティが動くまでの時間を操作。top, transformの順で記述
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}

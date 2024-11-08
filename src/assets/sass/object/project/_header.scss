@@ -1,0 +1,48 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+.p-header__widget {
+  order: 1;
+  margin-block-start: pxToRem(48px);
+  margin-right: -1.8%;
+
+  @include mq(md) {
+    margin-block-start: 0;
+    margin-right: 0;
+  }
+}
+
+.wp-block-search__inside-wrapper {
+  align-items: center;
+}
+
+.wp-block-search__input {
+  border: 1px solid $primary-text-color;
+  border-radius: pxToRem(10px);
+  max-width: 270px;
+  width: calc(218 / 320 * 100vw);
+  height: pxToRem(24px);
+
+  @include mq(md) {
+    width: pxToRem(200px);
+    height: pxToRem(24px);
+  }
+}
+
+.wp-block-search__button {
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+}
+
+.wp-block-search__button svg {
+  transform: scaleX(-1);
+  fill: $primary-text-color;
+  min-width: 14px;
+  min-height: 14px;
+  width: pxToRem(24px);
+  height: pxToRem(24px);
+}

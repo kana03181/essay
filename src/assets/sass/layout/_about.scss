@@ -1,0 +1,18 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../global" as *;
+
+/*
+  about
+-----------------------------------------------------*/
+.l-about {
+  margin-block: clamp(80 / 16 * 1rem, 4.107rem + 4.46vw, 100 / 16 * 1rem); // viw:320-768px
+
+  @include mq(lg) {
+    margin-block: pxToRem(100px) pxToRem(110px);
+  }
+
+  @include mq(xxl) {
+    margin-block: calc(150 / 1920 * 100vw) calc(150 / 1920 * 100vw);
+  }
+}

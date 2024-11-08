@@ -1,0 +1,88 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+h1 {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+
+  & > a {
+    color: $primary-text-color;
+    text-decoration: none;
+  }
+}
+
+.c-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  & .-category,
+  .-search {
+    writing-mode: initial;
+    -ms-writing-mode: initial;
+    font-size: clamp(24 / 16 * 1rem, 1.167rem + 1.67vw, 40 / 16 * 1rem);
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+  }
+
+  & span {
+    display: block;
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    color: $primary-text-color;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    font-size: clamp(32 / 16 * 1rem, 1.5rem + 2.5vw, 56 / 16 * 1rem); //320-1280
+  }
+}
+
+.l-about .c-title:nth-of-type(odd) {
+  align-items: flex-end;
+}
+
+.l-about .js-title:nth-of-type(odd) {
+  height: clamp(114 / 16 * 1rem, 5.384rem + 8.71vw, 153 / 16 * 1rem); //320-768
+  min-height: pxToRem(114px);
+
+  @include mq(md) {
+    height: clamp(153 / 16 * 1rem, 6.094rem + 7.23vw, 190 / 16 * 1rem); //768-1280
+  }
+}
+
+.js-title {
+  height: clamp(80 / 16 * 1rem, 3.929rem + 5.36vw, 104 / 16 * 1rem); //320-768
+  min-height: pxToRem(76px);
+  white-space: nowrap;
+
+  @include mq(md) {
+    height: clamp(104 / 16 * 1rem, 2.188rem + 8.98vw, 150 / 16 * 1rem); //768-1280
+  }
+
+  & .cursor-active {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      right: 0;
+      margin: auto;
+      vertical-align: text-bottom;
+      width: clamp(24 / 16 * 1rem, 1.167rem + 1.67vw, 40 / 16 * 1rem);
+      height: 2px;
+      background-color: $primary-text-color;
+      animation: blink 1s step-end infinite;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      background-color: transparent;
+    }
+  }
+}

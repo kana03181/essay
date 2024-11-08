@@ -1,0 +1,38 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Hero
+*/
+
+.l-hero__inner {
+  @include mq(lg) {
+    margin-inline-start: calc(155 / 1024 * 100vw);
+  }
+
+  @include mq(xl) {
+    margin-inline-start: calc(155 / 1280 * 100vw);
+  }
+}
+
+.p-hero__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 320 / 351;
+
+  @include mq(md) {
+    aspect-ratio: 768 / 720;
+  }
+
+  @include mq(lg) {
+    aspect-ratio: 1125 / 676;
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+  }
+}

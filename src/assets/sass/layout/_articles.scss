@@ -1,0 +1,7 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../global" as *;
+
+.l-articles {
+  margin-block: pxToRem(40px) clamp(80 / 16 * 1rem, 3.542rem + 7.29vw, 150 / 16 * 1rem); //320-1280
+}

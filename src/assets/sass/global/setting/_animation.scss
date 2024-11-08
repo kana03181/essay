@@ -1,0 +1,19 @@
+@charset 'UTF-8';
+//====================================
+//  Easing
+//====================================
+$easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+$easing-cut: cubic-bezier(0.8, 0, 0.2, 1);
+
+:root {
+  --ease1: cubic-bezier(0.25, -0.01, 0.37, 1.01);
+  --ease2: cubic-bezier(0.25, 0.1, 0.3, 1);
+  --ease3: cubic-bezier(0, 0.41, 0.87, 1);
+  --ease4: cubic-bezier(0.01, 0.38, 0.6, 1);
+  --ease5: cubic-bezier(0, 0.37, 0.66, 1);
+
+  --duration1: 0.3s;
+  --duration2: 0.45s;
+  --duration3: 0.63s;
+  --duration4: 1s;
+}

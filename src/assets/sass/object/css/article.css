@@ -1,0 +1,48 @@
+:root {
+  --ease1: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease2: cubic-bezier(0.14, 0.24, 0.41, 0.92);
+  --ease3: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease4: cubic-bezier(0, 0.14, 0.62, 0.98);
+  --ease5: cubic-bezier(0.06, 0.18, 0.56, 1);
+  --ease6: cubic-bezier(0.14, 0.21, 0.59, 1);
+  --ease7: cubic-bezier(0.33, -0.01, 0.66, 0.97);
+  --ease8: cubic-bezier(0.18, 0.34, 0.68, 0.89);
+  --duration1: 0.3s;
+  --duration2: 0.4s;
+  --duration3: 0.63s;
+  --duration4: 2s;
+}
+
+.p-article {
+  border-bottom: 1px solid #212121;
+  width: 100%;
+  padding-block-end: 4rem;
+}
+.p-article__wrapper {
+  margin-block: clamp(1.75rem, 1.583rem + 0.83vw, 2.25rem) clamp(1.5rem, 1.333rem + 0.83vw, 2rem);
+}
+.p-article__link {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.p-article__link > a {
+  font-size: 1rem;
+  display: block;
+  color: #212121;
+  text-decoration: none;
+  letter-spacing: 0.07em;
+  transition: letter-spacing 0.3s ease;
+}
+
+.p-article + .p-article {
+  margin-block-start: 4rem;
+}
+
+.p-article__link > a:hover {
+  letter-spacing: 0.1em;
+  transition: letter-spacing 0.3s ease;
+}/*# sourceMappingURL=article.css.map */
