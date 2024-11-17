@@ -73,7 +73,7 @@ function blog_setup()
 
   // 画像サイズを追加
   set_post_thumbnail_size(700, 469, true); //投稿ページ用
-  add_image_size('article-thumbnail', 327, 220, true); //投稿一覧用
+  add_image_size('article-thumbnail', 327, 245, true); //投稿一覧用
 
 
   /*
@@ -102,11 +102,11 @@ function add_class_to_nav($classes, $item, $args)
 {
   // ヘッダーメニューの場合
   if ($args->theme_location === 'header_nav') {
-    $classes[] = 'p-global-nav__list js-global-nav__list -menu'; // ヘッダーメニューの各<li>に付与するクラス
+    $classes[] = 'p-global-nav__list js-global-nav__list -menu'; // ヘッダーメニューの各<li>に付与するクラス名
   }
   // フッターメニューの場合
   elseif ($args->theme_location === 'footer_nav') {
-    $classes[] = 'p-footer-nav__list -menu'; // フッターメニューの各<li>に付与するクラス
+    $classes[] = 'p-footer-nav__list -menu'; // フッターメニューの各<li>に付与するクラス名
   }
   return $classes;
 }

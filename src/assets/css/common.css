@@ -637,11 +637,16 @@
 .c-media__text {
   font-size: clamp(0.9375rem, 0.917rem + 0.1vw, 1rem);
   letter-spacing: 0.08em;
-  line-height: 1.53;
+  line-height: 1.733;
 }
 @media screen and (min-width: 768px) {
   .c-media__text {
-    line-height: 1.4375;
+    line-height: 1.75;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .c-media__text {
+    line-height: 2;
   }
 }
 .c-media__thumbnail {
@@ -654,13 +659,13 @@
 }
 @media screen and (min-width: 768px) {
   .c-media__thumbnail {
-    aspect-ratio: 270/222;
+    aspect-ratio: 270/239;
     grid-area: 1/1/3/2;
   }
 }
 @media screen and (min-width: 1024px) {
   .c-media__thumbnail {
-    aspect-ratio: 327/220;
+    aspect-ratio: 327/245;
   }
 }
 .c-media__thumbnail img {
@@ -678,7 +683,7 @@
 }
 
 .c-media__categories {
-  padding-block-start: 2rem;
+  padding-block-start: clamp(1rem, 0.667rem + 1.67vw, 2rem);
   display: flex;
   gap: 1.5rem;
   align-items: center;
@@ -2365,7 +2370,7 @@ h1 > a {
 }
 .p-contents__body {
   order: 1;
-  padding-block-start: clamp(1.5rem, 1.167rem + 1.67vw, 2.5rem);
+  padding-block-start: clamp(2.5rem, 2rem + 2.5vw, 4rem);
   border-top: 1px solid #212121;
   margin-block-start: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
   text-align: center;
@@ -2379,18 +2384,23 @@ h1 > a {
   font-size: clamp(0.9375rem, 0.917rem + 0.1vw, 1rem);
   font-weight: 400;
   letter-spacing: 0.08em;
-  line-height: 1.533;
+  line-height: 2;
   text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .p-contents__body p {
+    line-height: 2.5;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .p-contents__body p {
+    line-height: 3;
+  }
 }
 .p-contents__body p.-notFound {
   word-break: keep-all;
   overflow-wrap: break-word;
   text-align: center;
-}
-@media screen and (min-width: 1024px) {
-  .p-contents__body p {
-    line-height: 1.4375;
-  }
 }
 .p-contents__body p + p {
   margin-block-end: 2rem;
@@ -2424,14 +2434,19 @@ h1 > a {
   font-size: clamp(0.9375rem, 0.917rem + 0.1vw, 1rem);
 }
 
-#js-randomImage {
+.p-contents__img {
   opacity: 0;
-  transition: opacity 0.5s ease;
-}
-#js-randomImage.loaded {
-  opacity: 1;
+  animation: randomImage 0.8s cubic-bezier(0.24, 0.12, 0.36, 1) forwards;
 }
 
+@keyframes randomImage {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*
   3.2 - Utility
 -----------------------------------------------------*/

@@ -16,7 +16,7 @@
       <!-- /.p-article__wrapper -->
       <p class="p-article__link">
         <a href="#">過去のエッセイを読む</a>
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/img/arrow.svg" alt="">
+        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/arrow.svg" alt="">
       </p>
     <?php endif; ?>
 

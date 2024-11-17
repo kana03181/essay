@@ -66,7 +66,7 @@
           <div class="p-about__profile">
             <h3 class="p-about__name">kana</h3>
             <p class="p-about__text">
-              <span class="-number">1996</span>年<span class="-number">3</span>月<span class="-number">18</span>日生まれ。魚座のAB型。福岡県大野城市でこの世に生まれ、<span class="-number">2</span>歳からは母の生まれ故郷の熊本で育つ。<br>高校卒業後、大阪の専門学校でブライダル業界ついて学び、その後ブライダル系の会社で式場のドレスコーディネーターとして働く。<br>Web業界に興味を持ち、IT業界に転職。現在はオンラインサロンでコーディングの勉強をしながらフロンエンドエンジニアを目指して日々勉強中。
+              <span class="-number">1996</span>年<span class="-number">3</span>月<span class="-number">18</span>日生まれ。魚座のAB型。福岡県大野城市でこの世に生まれ、<span class="-number">2</span>歳からは母の生まれ故郷の熊本で育つ。<br>高校卒業後、大阪の専門学校でブライダル業界ついて学び、その後ブライダル系の会社で結婚式場のドレスコーディネーターとして働く。<br>Web業界に興味を持ち、IT業界に転職。現在はオンラインサロンでコーディングの勉強をしながらフロンエンドエンジニアを目指して日々勉強中。
             </p>
           </div>
           <!-- /.p-about__texts -->
@@ -100,21 +100,21 @@
       ?>
 
       <?php if ($the_query->have_posts()):  ?>
-      <div class="p-article__wrapper">
+        <div class="p-article__wrapper">
 
-        <?php while ($the_query->have_posts()): $the_query->the_post(); ?>
-        <?php get_template_part('template-parts/content') ?>
-        <?php endwhile; ?>
-        <p class="p-article__link">
+          <?php while ($the_query->have_posts()): $the_query->the_post(); ?>
+            <?php get_template_part('template-parts/content') ?>
+          <?php endwhile; ?>
+          <p class="p-article__link">
             <a href="days/">過去のエッセイを読む</a>
             <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/arrow.svg" alt="">
           </p>
         <?php else: ?>
 
-        <p>投稿がありません。</p>
+          <p>投稿がありません。</p>
 
-      </div>
-      <!-- /.p-article__wrapper -->
+        </div>
+        <!-- /.p-article__wrapper -->
       <?php endif;
       wp_reset_postdata(); ?>
 

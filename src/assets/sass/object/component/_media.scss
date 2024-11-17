@@ -75,10 +75,14 @@
   &__text {
     font-size: clamp(15 / 16 * 1rem, 0.917rem + 0.1vw, 16 / 16 * 1rem); //320-1280
     letter-spacing: 0.08em;
-    line-height: 1.53;
+    line-height: 1.733;
 
     @include mq(md) {
-      line-height: 1.4375;
+      line-height: 1.75;
+    }
+
+    @include mq(lg) {
+      line-height: 2;
     }
   }
 
@@ -91,12 +95,12 @@
     overflow: hidden;
 
     @include mq(md) {
-      aspect-ratio: 270 / 222;
+      aspect-ratio: 270 / 239;
       grid-area: 1 / 1 / 3 / 2;
     }
 
     @include mq(lg) {
-      aspect-ratio: 327 / 220;
+      aspect-ratio: 327 / 245;
     }
 
     & img {
@@ -109,13 +113,12 @@
       transform: scale(1);
       transition-property: transform;
       transform-origin: center center;
-      // transform-origin: 65% 63%;
     }
   }
 }
 
 .c-media__categories {
-  padding-block-start: pxToRem(32px);
+  padding-block-start: clamp(16 / 16 * 1rem, 0.667rem + 1.67vw, 32 / 16 * 1rem);
   display: flex;
   gap: pxToRem(24px); //320-1280
   align-items: center;

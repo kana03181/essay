@@ -50,29 +50,6 @@ window.addEventListener("resize", function () {
 });
 
 /*
-    404
-  */
-const imgElement = document.getElementById("js-randomImage");
-
-if (imgElement) {
-  const images = JSON.parse(imgElement.getAttribute("data-images"));
-
-  // ランダムに画像を取得
-  const randomIndex = Math.floor(Math.random() * images.length);
-  const randomImage = images[randomIndex]; // プリロード用のImageオブジェクトを作成
-
-  const preloadImage = new Image();
-  preloadImage.src = randomImage.src; // 画像がプリロード完了したら表示
-
-  preloadImage.onload = function () {
-    imgElement.src = preloadImage.src;
-    imgElement.alt = randomImage.alt; // 画像が読み込まれたらloadedクラスを追加
-
-    imgElement.classList.add("loaded");
-  };
-}
-
-/*
     GSAP
 */
 document.addEventListener("DOMContentLoaded", (e) => {
