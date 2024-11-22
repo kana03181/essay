@@ -6,13 +6,13 @@
   about
 -----------------------------------------------------*/
 .l-about {
-  padding-block: clamp(80 / 16 * 1rem, 4.107rem + 4.46vw, 100 / 16 * 1rem); // viw:320-768px
+  padding-block: clamp(80 / 16 * 1rem, 4.107rem + 4.46vw, 100 / 16 * 1rem) clamp(40 / 16 * 1rem, 1.161rem + 6.7vw, 70 / 16 * 1rem); // viw:320-768px
 
   @include mq(lg) {
-    padding-block: pxToRem(100px) pxToRem(110px);
+    padding-block: pxToRem(100px) pxToRem(70px);
   }
 
   @include mq(xxl) {
-    padding-block: calc(150 / 1920 * 100vw) calc(150 / 1920 * 100vw);
+    padding-block: calc(150 / 1920 * 100vw) calc(110 / 1920 * 100vw);
   }
 }

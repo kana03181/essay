@@ -238,16 +238,16 @@
   about
 -----------------------------------------------------*/
 .l-about {
-  padding-block: clamp(5rem, 4.107rem + 4.46vw, 6.25rem);
+  padding-block: clamp(5rem, 4.107rem + 4.46vw, 6.25rem) clamp(2.5rem, 1.161rem + 6.7vw, 4.375rem);
 }
 @media screen and (min-width: 1024px) {
   .l-about {
-    padding-block: 6.25rem 6.875rem;
+    padding-block: 6.25rem 4.375rem;
   }
 }
 @media screen and (min-width: 1920px) {
   .l-about {
-    padding-block: 7.8125vw 7.8125vw;
+    padding-block: 7.8125vw 5.7291666667vw;
   }
 }
 
