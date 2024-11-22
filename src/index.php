@@ -66,7 +66,7 @@
           <div class="p-about__profile">
             <h3 class="p-about__name">kana</h3>
             <p class="p-about__text">
-              <span class="-number">1996</span>年<span class="-number">3</span>月<span class="-number">18</span>日生まれ。魚座のAB型。福岡県大野城市でこの世に生まれ、<span class="-number">2</span>歳からは母の生まれ故郷の熊本で育つ。<br>高校卒業後、大阪の専門学校でブライダル業界ついて学び、その後ブライダル系の会社で結婚式場のドレスコーディネーターとして働く。<br>Web業界に興味を持ち、IT業界に転職。現在はオンラインサロンでコーディングの勉強をしながらフロンエンドエンジニアを目指して日々勉強中。
+              <span class="-number">1996</span>年<span class="-number">3</span>月<span class="-number">18</span>日生まれ。魚座のAB型。福岡県大野城市でこの世に生まれ、<span class="-number">2</span>歳からは母の生まれ故郷の熊本で育つ。<br>高校卒業後、大阪の専門学校でブライダル業界ついて学び、その後ブライダル系の会社で結婚式場のドレスコーディネーターとして働く。<br>ひょんなことでWeb業界に興味を持ち、IT業界に転職。現在はオンラインサロンでコーディングの勉強をしながらフロンエンドエンジニアを目指して日々勉強中。
             </p>
           </div>
           <!-- /.p-about__texts -->

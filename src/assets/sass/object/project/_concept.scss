@@ -8,24 +8,37 @@
 
 .p-concept__items {
   position: relative;
-  max-width: $max-content-width;
+  max-width: 1440px;
   margin-inline: auto;
+
+  @include mq(lg) {
+    width: calc(95% - 5vw);
+  }
+
+  // @include mq(xxl) {
+  //   width: calc(75% - 10vw);
+  // }
 }
 
 .p-concept__texts {
-  margin-inline-start: calc(24 / 320 * 100%);
+  margin-inline-start: calc(24 / 320 * 100vw);
   width: calc(227 / 320 * 100%);
 
   @include mq(md) {
-    margin-inline-start: calc(48 / 768 * 100%);
+    margin-inline-start: calc(48 / 768 * 100vw);
+    width: fit-content;
   }
 
   @include mq(lg) {
-    margin-inline-start: calc(155 / 1024 * 100%);
+    margin-inline-start: calc(calc(155 / 1024 * 100vw) - 5vw);
   }
 
   @include mq(xl) {
-    margin-inline-start: calc(155 / 1280 * 100%);
+    margin-inline-start: calc(calc(155 / 1280 * 100vw) - 5vw);
+  }
+
+  @include mq(xxl) {
+    margin-inline-start: calc(calc(210 / 1920 * 100vw) - 5vw);
   }
 }
 
@@ -34,19 +47,23 @@
   overflow-wrap: break-word;
 
   &.-lead {
-    margin-block-end: clamp(24 / 16 * 1rem, 0.833rem + 3.33vw, 56 / 16 * 1rem);
+    margin-block-end: clamp(24 / 16 * 1rem, 1.072rem + 2.98vw, 40 / 16 * 1rem); //320-767
 
     @include mq(md) {
-      width: fit-content;
+      margin-block-end: clamp(40 / 16 * 1rem, 1rem + 3.13vw, 56 / 16 * 1rem); //767-1280
     }
 
     p {
       font-size: clamp(18 / 16 * 1rem, 0.499rem + 3.13vw, 32 / 16 * 1rem); //320-767
       font-weight: 500;
-      line-height: 1.6;
+      line-height: 1.666;
 
       @include mq(md) {
         font-size: clamp(32 / 16 * 1rem, 1.25rem + 1.56vw, 40 / 16 * 1rem);
+        line-height: 1.8125;
+      }
+
+      @include mq(lg) {
         line-height: 1.45;
       }
     }
@@ -96,7 +113,7 @@
   @include mq(md) {
     position: relative;
     position: absolute;
-    top: calc(93 / 768 * 100vw);
+    top: calc(110 / 768 * 100vw);
     right: 0;
     gap: clamp(56 / 16 * 1rem, 1.25rem + 4.69vw, 80 / 16 * 1rem);
     width: 100%;
@@ -107,103 +124,115 @@
   }
 
   @include mq(lg) {
-    right: calc(64 / 1024 * 100%);
+    top: 154px;
+  }
+}
+
+.p-concept__image {
+  @include mq(md) {
+    position: absolute;
+
+    @include mq(xl) {
+      max-width: 400px;
+    }
   }
 
-  @include mq(xl) {
-    right: calc(64 / 1280 * 100%);
+  &.-first {
+    width: calc(150 / 320 * 100vw);
+    height: auto;
+    aspect-ratio: 150 / 100;
+    margin-inline-start: auto;
+
+    @include mq(md) {
+      aspect-ratio: 250 / 167;
+      width: calc(250 / 768 * 100vw);
+      top: 0;
+      right: 0;
+    }
+
+    @include mq(lg) {
+      aspect-ratio: 300 / 200;
+      width: calc(300 / 1024 * 100vw);
+    }
+
+    @include mq(xl) {
+      width: calc(300 / 1280 * 100vw);
+    }
+
+    @include mq(xxl) {
+      right: -3vw;
+    }
   }
 
-  & .p-concept__image {
-    &.-first {
-      width: calc(150 / 320 * 100vw);
-      height: auto;
-      aspect-ratio: 150 / 100;
-      margin-inline-start: auto;
+  &.-second {
+    width: calc(150 / 320 * 100vw);
+    height: auto;
+    aspect-ratio: 150 / 100;
+    margin-inline-start: calc(114 / 320 * 100vw);
 
-      @include mq(md) {
-        aspect-ratio: 250 / 167;
-        width: calc(250 / 768 * 100vw);
-      }
-
-      @include mq(lg) {
-        aspect-ratio: 300 / 200;
-        width: calc(300 / 1024 * 100vw);
-      }
-
-      @include mq(xl) {
-        width: calc(300 / 1280 * 100vw);
-      }
+    @include mq(md) {
+      aspect-ratio: 250 / 167;
+      width: calc(250 / 768 * 100vw);
+      top: calc(223 / 768 * 100vw);
+      right: calc(100 / 768 * 100vw);
     }
 
-    &.-second {
-      width: calc(150 / 320 * 100vw);
-      height: auto;
-      aspect-ratio: 150 / 100;
-      margin-inline-start: calc(114 / 320 * 100vw);
-
-      @include mq(md) {
-        aspect-ratio: 250 / 167;
-        width: calc(250 / 768 * 100vw);
-        position: absolute;
-        top: calc(223 / 768 * 100vw);
-        right: calc(100 / 768 * 100vw);
-      }
-
-      @include mq(lg) {
-        top: calc(280 / 1024 * 100vw);
-        right: calc(91 / 1024 * 100%);
-        aspect-ratio: 300 / 200;
-        width: calc(300 / 1024 * 100vw);
-      }
-
-      @include mq(xl) {
-        top: calc(280 / 1280 * 100vw);
-        right: calc(91 / 1280 * 100%);
-        aspect-ratio: 300 / 200;
-        width: calc(300 / 1280 * 100vw);
-      }
+    @include mq(lg) {
+      top: calc(280 / 1024 * 100vw);
+      right: calc(155 / 1024 * 100vw);
+      aspect-ratio: 300 / 200;
+      width: calc(300 / 1024 * 100vw);
     }
 
-    &.-third {
-      width: calc(145 / 320 * 100vw);
-      height: auto;
-      aspect-ratio: 145 / 145;
-      margin-inline-start: calc(54 / 320 * 100vw);
-
-      @include mq(md) {
-        aspect-ratio: 250 / 250;
-        width: calc(250 / 768 * 100vw);
-        position: absolute;
-        top: calc(279 / 768 * 100vw);
-        left: calc(112 / 768 * 100vw);
-        margin-inline-start: 0;
-      }
-
-      @include mq(lg) {
-        top: calc(344 / 1024 * 100vw);
-        left: calc(253 / 1024 * 100vw);
-        aspect-ratio: 300 / 300;
-        width: calc(300 / 1024 * 100vw);
-      }
-
-      @include mq(xl) {
-        top: calc(344 / 1280 * 100vw);
-        left: calc(509 / 1280 * 100vw);
-        aspect-ratio: 300 / 300;
-        width: calc(300 / 1280 * 100vw);
-      }
-
-      @include mq(xxl) {
-        left: initial;
-        right: calc(700 / 1920 * 100vw);
-      }
+    @include mq(xl) {
+      top: clamp(280 / 16 * 1rem, 9.125rem + 10.47vw, 347 / 16 * 1rem);
+      right: calc(155 / 1280 * 100vw);
+      aspect-ratio: 300 / 200;
+      width: calc(300 / 1280 * 100vw);
     }
 
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    @include mq(xxl) {
+      right: 155px;
     }
+  }
+
+  &.-third {
+    width: calc(145 / 320 * 100vw);
+    height: auto;
+    aspect-ratio: 145 / 145;
+    margin-inline-start: calc(54 / 320 * 100vw);
+
+    @include mq(md) {
+      aspect-ratio: 250 / 250;
+      width: calc(250 / 768 * 100vw);
+      top: calc(279 / 768 * 100vw);
+      left: calc(112 / 768 * 100vw);
+      margin-inline-start: 0;
+    }
+
+    @include mq(lg) {
+      top: calc(344 / 1024 * 100vw);
+      left: initial;
+      right: calc(535 / 1024 * 100vw);
+      aspect-ratio: 300 / 300;
+      width: calc(300 / 1024 * 100vw);
+    }
+
+    @include mq(xl) {
+      top: clamp(344 / 16 * 1rem, 26.88vw, 516 / 16 * 1rem);
+      right: clamp(535 / 16 * 1rem, 9.938rem + 29.38vw, 723 / 16 * 1rem);
+      aspect-ratio: 300 / 300;
+      width: calc(300 / 1280 * 100vw);
+    }
+
+    @include mq(xxl) {
+      right: pxToRem(658px);
+    }
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

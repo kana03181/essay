@@ -4,7 +4,6 @@
 const hamburgerButton = document.querySelector(".js-hamburger");
 const body_element = document.body;
 const nav_menus = document.querySelectorAll(".js-global-nav__list.-menu > a");
-// console.log(nav_menus);
 
 if (hamburgerButton) {
   hamburgerButton.addEventListener("click", (e) => {
@@ -20,6 +19,10 @@ if (hamburgerButton) {
     nav_menus.forEach((menu) => {
       // console.log(menu);
       menu.classList.toggle("is-fadeIn");
+      menu.addEventListener("click", () => {
+        document.documentElement.classList.remove("is-active-drawer");
+        body_element.classList.remove("is-fixed");
+      });
     });
   });
 }
@@ -52,50 +55,51 @@ window.addEventListener("resize", function () {
 /*
     GSAP
 */
-document.addEventListener("DOMContentLoaded", (e) => {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(TextPlugin);
+// document.addEventListener("DOMContentLoaded", (e) => {
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 
-  const title = document.querySelectorAll(".js-title");
+const title = document.querySelectorAll(".js-title");
+// console.log(title);
 
-  title.forEach((el) => {
-    const spanText = el.innerText;
+title.forEach((el) => {
+  const spanText = el.innerText;
 
-    gsap.set(el, {
+  gsap.set(el, {
+    text: {
+      // value: spanText,
+      newClass: "cursor-active",
+    },
+    opacity: 0,
+  });
+
+  const tl = gsap.timeline({ paused: true });
+
+  tl.to(el, {
+    opacity: 1,
+    duration: 0, // opacityを瞬時に表示させる
+  })
+    .to(el, {
+      delay: 1,
+      duration: spanText.length * 0.3, // 各文字の表示時間
       text: {
-        // value: spanText,
+        value: spanText,
         newClass: "cursor-active",
+        delimiter: "",
       },
-      opacity: 0,
-    });
-
-    const tl = gsap.timeline({ paused: true });
-
-    tl.to(el, {
-      opacity: 1,
-      duration: 0, // opacityを瞬時に表示させる
+      ease: "none",
+      stagger: 0.4, // 各文字ごとの遅延
     })
-      .to(el, {
-        delay: 1,
-        duration: spanText.length * 0.3, // 各文字の表示時間
-        text: {
-          value: spanText,
-          newClass: "cursor-active",
-          delimiter: "",
-        },
-        ease: "none",
-        stagger: 0.4, // 各文字ごとの遅延
-      })
-      .add(() => {
-        el.querySelector(".cursor-active")?.removeAttribute("class");
-      }, "+=2.5");
+    .add(() => {
+      el.querySelector(".cursor-active")?.removeAttribute("class");
+    }, "+=2.5");
 
-    ScrollTrigger.create({
-      trigger: el,
-      start: "top 90%",
+  ScrollTrigger.create({
+    trigger: el,
+    start: "top 90%",
 
-      onEnter: () => tl.play(),
-      once: true,
-    });
+    onEnter: () => tl.play(),
+    once: true,
   });
 });
+// });

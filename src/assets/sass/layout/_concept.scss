@@ -9,11 +9,12 @@
   margin-block: clamp(72 / 16 * 1rem, 3.5rem + 5vw, 120 / 16 * 1rem) 0; //viw:320-1280px
 
   @include mq(md) {
-    height: calc(622 / 768 * 100vw);
+    height: calc(640 / 768 * 100vw);
   }
 
   @include mq(lg) {
-    height: calc(768 / 1024 * 100vw);
+    height: calc(798 / 1024 * 100vw);
+    max-height: 1070px;
   }
 
   @include mq(xl) {

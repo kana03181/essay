@@ -76,6 +76,8 @@ function blog_setup()
   add_image_size('article-thumbnail', 327, 245, true); //投稿一覧用
 
 
+
+
   /*
     カスタムメニュー
   ----------------------------------- */

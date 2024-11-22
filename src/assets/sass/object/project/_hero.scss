@@ -17,6 +17,8 @@
 }
 
 .p-hero__img {
+  --header-h: 100px;
+
   width: 100%;
   height: auto;
   aspect-ratio: 320 / 351;
@@ -26,13 +28,16 @@
   }
 
   @include mq(lg) {
-    aspect-ratio: 1125 / 676;
+    aspect-ratio: 1125 / 640;
+    max-width: 1440px;
+    margin-inline: auto;
+    height: calc(100svh - var(--header-h));
   }
 
   & img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: right center;
+    object-position: right bottom;
   }
 }

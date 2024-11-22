@@ -6,7 +6,7 @@
 -----------------------------------------------------*/
 .l-footer {
   background-color: $primary-sub-color;
-  padding-block-start: clamp(48 / 16 * 1rem, 2.833rem + 0.83vw, 56 / 16 * 1rem); //320-1280
+  padding-block: clamp(48 / 16 * 1rem, 2.833rem + 0.83vw, 56 / 16 * 1rem) pxToRem(10px); //320-1280
 
   &__inner {
     padding-inline: 5%;
