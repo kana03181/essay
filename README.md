@@ -1,5 +1,5 @@
 ## ワイのエッセイ
-![Image](https://github.com/user-attachments/assets/972f4000-9bca-4ba1-a5d5-9ec3e115b611)
+![Image](https://github.com/user-attachments/assets/7265ec2b-ff62-411f-991f-93821c237dcd)
 
 ## ■ 概要
 WordPressを一から実装できるようになることを目指して制作しました。
